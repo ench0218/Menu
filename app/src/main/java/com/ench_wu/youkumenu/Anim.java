@@ -18,7 +18,9 @@ public class Anim {
      * @param startOffset
      */
     public static void closeAnim(RelativeLayout rl, long startOffset) {
-
+        for (int i = 0;i<rl.getChildCount();i++){
+            rl.getChildAt(i).setEnabled(false);
+        }
         RotateAnimation rotateAnimation = new RotateAnimation(0, -180,
                 RotateAnimation.RELATIVE_TO_SELF, 0.5f,
                 RotateAnimation.RELATIVE_TO_SELF, 1);
@@ -52,7 +54,9 @@ public class Anim {
      * @param startOffset
      */
     public static void openAnim(RelativeLayout rl, long startOffset) {
-
+        for (int i = 0;i<rl.getChildCount();i++){
+            rl.getChildAt(i).setEnabled(true);
+        }
         RotateAnimation rotateAnimation = new RotateAnimation(-180, 0,
                 RotateAnimation.RELATIVE_TO_SELF, 0.5f,
                 RotateAnimation.RELATIVE_TO_SELF, 1);
